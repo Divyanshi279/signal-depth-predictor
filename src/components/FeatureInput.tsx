@@ -23,6 +23,9 @@ export const FeatureInput = () => {
             className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
             placeholder="Enter fan-in count"
           />
+          <p className="text-xs text-gray-500 mt-1">
+            Higher fan-in may increase combinational depth
+          </p>
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -35,6 +38,9 @@ export const FeatureInput = () => {
             className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
             placeholder="Enter fan-out count"
           />
+          <p className="text-xs text-gray-500 mt-1">
+            Consider load balancing for high fan-out signals
+          </p>
         </div>
 
         <div className="border-t pt-4 mt-4">
@@ -53,7 +59,7 @@ export const FeatureInput = () => {
                 className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
               />
               <p className="text-xs text-gray-500 mt-1">
-                Lower values will enforce stricter timing constraints
+                Lower values enforce stricter timing constraints
               </p>
             </div>
             
@@ -69,6 +75,9 @@ export const FeatureInput = () => {
                 className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 step="0.1"
               />
+              <p className="text-xs text-gray-500 mt-1">
+                Affects maximum allowable combinational delay
+              </p>
             </div>
 
             <div>

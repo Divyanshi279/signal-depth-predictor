@@ -67,6 +67,31 @@ export const ResultsDisplay = () => {
               <span className="text-sm text-gray-600">Path Optimization</span>
               <span className="text-sm font-medium text-gray-900">78%</span>
             </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">GNN Confidence</span>
+              <span className="text-sm font-medium text-gray-900">94%</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">Heuristic Score</span>
+              <span className="text-sm font-medium text-gray-900">88%</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-4 bg-green-50 rounded-lg border border-green-100">
+          <p className="text-sm font-medium text-green-900 mb-2">
+            Model Insights
+          </p>
+          <div className="space-y-2 text-sm">
+            <p className="text-gray-700">
+              • Graph Analysis: Strong node connectivity suggests potential for parallel optimization
+            </p>
+            <p className="text-gray-700">
+              • Heuristic Analysis: Fan-out distribution indicates possible logic sharing opportunities
+            </p>
+            <p className="text-gray-700">
+              • Power Efficiency: Current path suggests moderate power consumption
+            </p>
           </div>
         </div>
       </div>
