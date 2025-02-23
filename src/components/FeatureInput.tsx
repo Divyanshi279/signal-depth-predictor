@@ -4,6 +4,9 @@ import { useState } from 'react';
 export const FeatureInput = () => {
   const [fanIn, setFanIn] = useState('');
   const [fanOut, setFanOut] = useState('');
+  const [maxAllowedDepth, setMaxAllowedDepth] = useState('');
+  const [clockPeriod, setClockPeriod] = useState('');
+  const [gateDelay, setGateDelay] = useState('');
 
   return (
     <div className="glass-card p-6 rounded-lg animate-fade-in">
@@ -30,6 +33,53 @@ export const FeatureInput = () => {
             onChange={(e) => setFanOut(e.target.value)}
             className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
           />
+        </div>
+
+        <div className="border-t pt-4 mt-4">
+          <h4 className="text-sm font-semibold text-gray-900 mb-3">Timing Constraints</h4>
+          
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Maximum Allowed Depth
+              </label>
+              <input
+                type="number"
+                value={maxAllowedDepth}
+                onChange={(e) => setMaxAllowedDepth(e.target.value)}
+                placeholder="e.g., 10"
+                className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              />
+            </div>
+            
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Clock Period (ns)
+              </label>
+              <input
+                type="number"
+                value={clockPeriod}
+                onChange={(e) => setClockPeriod(e.target.value)}
+                placeholder="e.g., 10"
+                className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                step="0.1"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Gate Delay (ps)
+              </label>
+              <input
+                type="number"
+                value={gateDelay}
+                onChange={(e) => setGateDelay(e.target.value)}
+                placeholder="e.g., 100"
+                className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                step="1"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
