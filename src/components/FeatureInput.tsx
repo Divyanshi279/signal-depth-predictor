@@ -21,6 +21,7 @@ export const FeatureInput = () => {
             value={fanIn}
             onChange={(e) => setFanIn(e.target.value)}
             className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            placeholder="Enter fan-in count"
           />
         </div>
         <div>
@@ -32,6 +33,7 @@ export const FeatureInput = () => {
             value={fanOut}
             onChange={(e) => setFanOut(e.target.value)}
             className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            placeholder="Enter fan-out count"
           />
         </div>
 
@@ -50,6 +52,9 @@ export const FeatureInput = () => {
                 placeholder="e.g., 10"
                 className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
               />
+              <p className="text-xs text-gray-500 mt-1">
+                Lower values will enforce stricter timing constraints
+              </p>
             </div>
             
             <div>
@@ -78,6 +83,9 @@ export const FeatureInput = () => {
                 className="w-full p-2 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 step="1"
               />
+              <p className="text-xs text-gray-500 mt-1">
+                Typical range: 50-200ps for standard cells
+              </p>
             </div>
           </div>
         </div>

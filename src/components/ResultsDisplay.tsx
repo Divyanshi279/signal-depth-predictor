@@ -3,6 +3,11 @@ export const ResultsDisplay = () => {
   const predictedDepth = 4;
   const maxAllowedDepth = 5; // This should come from FeatureInput in a real implementation
   const hasTimingViolation = predictedDepth > maxAllowedDepth;
+  const optimizationSuggestions = [
+    "Consider logic level parallelization",
+    "Evaluate retiming opportunities",
+    "Check for redundant logic paths"
+  ];
 
   return (
     <div className="glass-card p-6 rounded-lg animate-fade-in">
@@ -32,12 +37,38 @@ export const ResultsDisplay = () => {
         
         {hasTimingViolation && (
           <div className="p-4 bg-red-50 rounded-lg border border-red-100">
-            <p className="text-sm font-medium text-red-800">
+            <p className="text-sm font-medium text-red-800 mb-3">
               Warning: The predicted combinational depth exceeds the maximum allowed depth.
               Consider architectural optimizations to reduce logic depth.
             </p>
+            <div className="space-y-2">
+              <p className="text-sm font-medium text-gray-900">Optimization Suggestions:</p>
+              <ul className="list-disc list-inside space-y-1">
+                {optimizationSuggestions.map((suggestion, index) => (
+                  <li key={index} className="text-sm text-gray-700">
+                    {suggestion}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         )}
+
+        <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
+          <p className="text-sm font-medium text-blue-900 mb-2">
+            Complexity Analysis
+          </p>
+          <div className="space-y-2">
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">Logic Efficiency</span>
+              <span className="text-sm font-medium text-gray-900">85%</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">Path Optimization</span>
+              <span className="text-sm font-medium text-gray-900">78%</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
